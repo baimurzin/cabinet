@@ -8,10 +8,10 @@
 <body>
 <h2 class="hello-title">Current task</h2>
 <script src="/js/main.js"></script>
-<a href="profile">My profile</a>
-<a href="level">My level</a>
-<a href="tasks">My tasks</a>
-<a href="chat">Chat</a>
+<a href="/profile">My profile</a>
+<a href="/level">My level</a>
+<a href="/tasks">My tasks</a>
+<a href="/chat">Chat</a>
 
 <h2>Задание ${task.taskId}</h2>
 <h2>${task.taskName}</h2>
