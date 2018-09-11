@@ -11,7 +11,7 @@
 <a href="profile">My profile</a>
 <a href="level">My level</a>
 <a href="chat">Chat</a>
-
+<p>Press F5 and you'll see magic )))</p>
 <div>
     <table border="1">
         <tr>
@@ -22,7 +22,7 @@
         <#list tasks as task>
         <tr>
             <td>${task.taskId}</td>
-            <td><a href="task">${task.taskName}</a></td>
+            <td><a href="task/${task.taskId}">${task.taskName}</a></td>
             <td>${task.taskStatus}</td>
         </tr>
         </#list>
