@@ -11,6 +11,9 @@
 <a href="profile">My profile</a>
 <a href="level">My level</a>
 <a href="chat">Chat</a>
+
+
+<#if tasks?has_content>
 <p>Press F5 and you'll see magic )))</p>
 <div>
     <table border="1">
@@ -28,6 +31,8 @@
         </#list>
     </table>
 </div>
-
+<#else>
+<p>No tasks yet</p>
+</#if>
 </body>
 </html>
