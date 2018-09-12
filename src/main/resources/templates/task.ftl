@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Task</title>
-    <link href="/css/main.css" rel="stylesheet">
+
 </head>
 <body>
 <h2 class="hello-title">Current task</h2>
@@ -20,5 +20,11 @@
 
 <p>СТАТУС: ${task.taskStatus}</p>
 
+
+<h1>Изменение статуса задания</h1>
+<form action="/task/${task.taskId}" method="post">
+    <p>Новый статус: <input name="taskStatus" type="text"/></p>
+    <p><input type="submit" value="Submit" /></p>
+</form>
 </body>
 </html>
