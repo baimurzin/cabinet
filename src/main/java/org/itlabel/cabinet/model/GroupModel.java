@@ -12,7 +12,6 @@ import java.util.List;
 @Table(name = "group")
 public class GroupModel {
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
