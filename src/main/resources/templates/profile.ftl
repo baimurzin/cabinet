@@ -11,5 +11,6 @@
 <a href="level">My level</a>
 <a href="tasks">My tasks</a>
 <a href="chat">Chat</a>
+<a href="career">My career</a>
 </body>
 </html>
