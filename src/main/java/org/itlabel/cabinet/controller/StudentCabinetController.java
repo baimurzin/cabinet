@@ -15,12 +15,10 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 @Controller
 public class StudentCabinetController {
     private List<Task> list = Arrays.asList(
-            (
-                    new Task(1, "Набери грибов", "Возьми корзинку, ножик и едь в лес.", "Новое")),
-            new Task(2, "Собери банку сушеных комаров", "Возьми трехлитровую банку и едь на болото.",
+            new Task(0l, 0, "Набери грибов", "Возьми корзинку, ножик и едь в лес.", "Новое"),
+            new Task(1l, 1, "Собери банку сушеных комаров", "Возьми трехлитровую банку и едь на болото.",
                     "Новое"),
-            new Task(3, "Сделай коллаж", "Возьми грибы, комаров и лист бумаги.", "Новое")
-
+            new Task(2l, 2, "Сделай коллаж", "Возьми грибы, комаров и лист бумаги.", "Новое")
     );
 
     @RequestMapping("/profile")
@@ -44,21 +42,18 @@ public class StudentCabinetController {
         return "chat";
     }
 
-    @RequestMapping(value = "/task/{id}", method = GET)
-    public String showCurrentTaskPage(Model model, @PathVariable("id") int id) {
-        model.addAttribute("task", list.get(id - 1));
+    @RequestMapping(value = "/task/{number}", method = GET)
+    public String showCurrentTaskPage(Model model, @PathVariable("number") Integer number) {
+        model.addAttribute("task", list.get(number));
         return "task";
     }
 
-    @RequestMapping(value = "/task/{id}", method = POST)
-    public String showCurrentTaskPage(@RequestParam("taskStatus") String taskStatus,
-                                      Model model,
-                                      @PathVariable("id") int id
-    ) {
+    @RequestMapping(value = "/task/{number}", method = POST)
+    public String showCurrentTaskPage(@RequestParam("status") String status, Model model, @PathVariable("number") int number) {
         Task task = new Task();
-        task = list.get(id - 1);
-        task.setTaskStatus(taskStatus);
-        list.set(id - 1, task);
+        task = list.get(number);
+        task.setStatus(status);
+        list.set(number, task);
         return "redirect:/tasks";
     }
 }
