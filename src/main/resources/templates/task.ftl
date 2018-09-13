@@ -13,18 +13,18 @@
 <a href="/tasks">My tasks</a>
 <a href="/chat">Chat</a>
 
-<h2>Задание ${task.taskId}</h2>
-<h2>${task.taskName}</h2>
+<h2>Задание ${task.id}</h2>
+<h2>${task.name}</h2>
 <h3>Описание</h3>
-<p>${task.taskDescription}</p>
+<p>${task.description}</p>
 
-<p>СТАТУС: ${task.taskStatus}</p>
+<p>СТАТУС: ${task.status}</p>
 
 
 <h1>Изменение статуса задания</h1>
-<form action="/task/${task.taskId}" method="post">
-    <p>Новый статус: <input name="taskStatus" type="text"/></p>
-    <p><input type="submit" value="Submit" /></p>
+<form action="/task/${task.id}" method="post">
+    <p>Новый статус: <input name="status" type="text"/></p>
+    <p><input type="submit" value="Submit"/></p>
 </form>
 </body>
 </html>
