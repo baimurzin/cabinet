@@ -23,8 +23,8 @@
         </tr>
         <#list tasks as task>
         <tr>
-            <td>${task.id}</td>
-            <td><a href="task/${task.id}">${task.name}</a></td>
+            <td>${task.number}</td>
+            <td><a href="task/${task.number}">${task.name}</a></td>
             <td>${task.status}</td>
         </tr>
         </#list>
