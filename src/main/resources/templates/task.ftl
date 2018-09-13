@@ -23,8 +23,14 @@
 
 <h1>Изменение статуса задания</h1>
 <form action="/task/${task.id}" method="post">
-    <p>Новый статус: <input name="status" type="text"/></p>
-    <p><input type="submit" value="Submit"/></p>
+
+    <select name="status"">
+        <option value="">Выберите статус...</option>
+        <option>Новое</option>
+        <option>Делается</option>
+        <option>Закончено</option>
+    </select>
+    <p><input type="submit" value="Подтвердить изменение"/></p>
 </form>
 </body>
 </html>
