@@ -23,9 +23,9 @@
         </tr>
         <#list tasks as task>
         <tr>
-            <td>${task.taskId}</td>
-            <td><a href="task/${task.taskId}">${task.taskName}</a></td>
-            <td>${task.taskStatus}</td>
+            <td>${task.id}</td>
+            <td><a href="task/${task.id}">${task.name}</a></td>
+            <td>${task.status}</td>
         </tr>
         </#list>
     </table>
