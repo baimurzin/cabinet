@@ -1,7 +1,8 @@
 package org.itlabel.cabinet.model;
 
 public class Task {
-    private Integer id;
+    private Long id;
+    private Integer number;
     private String name;
     private String description;
     private String status;
@@ -9,19 +10,28 @@ public class Task {
     public Task() {
     }
 
-    public Task(Integer id, String name, String description, String status) {
+    public Task(Long id, Integer number, String name, String description, String status) {
         this.id = id;
+        this.number = number;
         this.name = name;
         this.description = description;
         this.status = status;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
+    }
+
+    public Integer getNumber() {
+        return number;
+    }
+
+    public void setNumber(Integer number) {
+        this.number = number;
     }
 
     public String getName() {
