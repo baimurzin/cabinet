@@ -1,50 +1,50 @@
 package org.itlabel.cabinet.model;
 
 public class Task {
-    private int taskId;
-    private String taskName;
-    private String taskDescription;
-    private String taskStatus;
+    private Integer id;
+    private String name;
+    private String description;
+    private String status;
 
     public Task() {
     }
 
-    public Task(int taskId, String taskName, String taskDescription, String taskStatus) {
-        this.taskId = taskId;
-        this.taskName = taskName;
-        this.taskDescription = taskDescription;
-        this.taskStatus = taskStatus;
+    public Task(Integer id, String name, String description, String status) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.status = status;
     }
 
-    public int getTaskId() {
-        return taskId;
+    public int getId() {
+        return id;
     }
 
-    public void setTaskId(int taskId) {
-        this.taskId = taskId;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getTaskName() {
-        return taskName;
+    public String getName() {
+        return name;
     }
 
-    public void setTaskName(String taskName) {
-        this.taskName = taskName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getTaskDescription() {
-        return taskDescription;
+    public String getDescription() {
+        return description;
     }
 
-    public void setTaskDescription(String taskDescription) {
-        this.taskDescription = taskDescription;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public String getTaskStatus() {
-        return taskStatus;
+    public String getStatus() {
+        return status;
     }
 
-    public void setTaskStatus(String taskStatus) {
-        this.taskStatus = taskStatus;
+    public void setStatus(String status) {
+        this.status = status;
     }
 }
