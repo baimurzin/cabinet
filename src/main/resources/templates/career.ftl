@@ -26,7 +26,7 @@
         <h3>Вакансии</h3>
         <ul>
         <#list careerModel.getVacancy() as vacancy>
-            <li><a href="vacancy?id=${vacancy.}">${vacancy.getCompanyName()} ${vacancy.getPositionName()} ${vacancy.getSalary()} руб/мес</a></li>
+            <li><a href="vacancy?id=${vacancy.getVacancyId()}">${vacancy.getCompanyName()} ${vacancy.getPositionName()} ${vacancy.getSalary()} руб/мес</a></li>
         </#list>
         </ul>
     </div>
