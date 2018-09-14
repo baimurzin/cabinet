@@ -21,7 +21,6 @@ public class StudentCareerController {
         List vacancies = new ArrayList<Vacancy>(){
             {
                 add(new Vacancy(0, "Google", "middle Java Developer", 250000, 1));
-                add(new Vacancy(0, "Google", "middle Java Developer", 250000, 1));
                 add(new Vacancy(1, "Yandex", "junior Java Developer", 150000, 1));
                 add(new Vacancy(2, "FaceBook", "middle Java Developer", 240000, 1));
                 add(new Vacancy(3, "Uber", "junior Java Developer", 180000, 1));
