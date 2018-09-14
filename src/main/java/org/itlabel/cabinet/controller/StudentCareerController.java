@@ -18,20 +18,25 @@ import java.util.List;
  */
 @Controller
 public class StudentCareerController {
-    List vacancies = new ArrayList<Vacancy>();
-    List skills = new ArrayList<String>();
+        List vacancies = new ArrayList<Vacancy>(){
+            {
+                add(new Vacancy(0, "Google", "middle Java Developer", 250000, 1));
+                add(new Vacancy(0, "Google", "middle Java Developer", 250000, 1));
+                add(new Vacancy(1, "Yandex", "junior Java Developer", 150000, 1));
+                add(new Vacancy(2, "FaceBook", "middle Java Developer", 240000, 1));
+                add(new Vacancy(3, "Uber", "junior Java Developer", 180000, 1));
+            }};
+        List skills = new ArrayList<String>(){
+                {
+                    add("SQL");
+                    add("Java Core");
+                    add("Spring");
+                }};
 
     User user = new User();
 
     @RequestMapping("/career")
     public ModelAndView showCareerPage() {
-        vacancies.add(new Vacancy(0, "Google", "middle Java Developer", 250000, 1));
-        vacancies.add(new Vacancy(1, "Yandex", "junior Java Developer", 150000, 1));
-        vacancies.add(new Vacancy(2, "FaceBook", "middle Java Developer", 240000, 1));
-        vacancies.add(new Vacancy(3, "Uber", "junior Java Developer", 180000, 1));
-        skills.add("SQL");
-        skills.add("Java Core");
-        skills.add("Spring");
         user.setSkills(skills);
         return new ModelAndView("career", "careerModel", new CareerModel(vacancies, user));
     }
@@ -40,6 +45,4 @@ public class StudentCareerController {
     public ModelAndView greeting(@RequestParam(value = "id") Integer id) {
         return new ModelAndView("vacancy", "vacancy", vacancies.get(id));
     }
-
-    List<Vacancy> llist = new ArrayList();
 }
