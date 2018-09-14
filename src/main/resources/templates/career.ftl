@@ -17,18 +17,17 @@
     <div style="margin:20px; float: left">
         <h3>Мои навыки</h3>
         <ul>
-            <li>${careerModel.getUser().getSkills(0)}</li>
-            <li>${careerModel.getUser().getSkills(1)}</li>
-            <li>${careerModel.getUser().getSkills(2)}</li>
+        <#list careerModel.getUser().getSkills() as skill>
+            <li>${skill}</li>
+        </#list>
         </ul>
     </div>
     <div style="margin:20px;  float: right">
         <h3>Вакансии</h3>
         <ul>
-            <li><a href="vacancy?id=${careerModel.getVacancy(0).getVacancyId()}">${careerModel.getVacancy(0).getCompanyName()} ${careerModel.getVacancy(0).getPositionName()} ${careerModel.getVacancy(0).getSalary()} руб/мес</a></li>
-            <li><a href="vacancy?id=${careerModel.getVacancy(1).getVacancyId()}">${careerModel.getVacancy(1).getCompanyName()} ${careerModel.getVacancy(1).getPositionName()} ${careerModel.getVacancy(1).getSalary()} руб/мес</a></li>
-            <li><a href="vacancy?id=${careerModel.getVacancy(2).getVacancyId()}">${careerModel.getVacancy(2).getCompanyName()} ${careerModel.getVacancy(2).getPositionName()} ${careerModel.getVacancy(2).getSalary()} руб/мес</a></li>
-            <li><a href="vacancy?id=${careerModel.getVacancy(3).getVacancyId()}">${careerModel.getVacancy(3).getCompanyName()} ${careerModel.getVacancy(3).getPositionName()} ${careerModel.getVacancy(3).getSalary()} руб/мес</a></li>
+        <#list careerModel.getVacancy() as vacancy>
+            <li><a href="vacancy?id=${vacancy.getVacancyId()}">${vacancy.getCompanyName()} ${vacancy.getPositionName()} ${vacancy.getSalary()} руб/мес</a></li>
+        </#list>
         </ul>
     </div>
 </div>

@@ -14,8 +14,8 @@ public class CareerModel{
         this.user = user;
     }
 
-    public Vacancy getVacancy(int i) {
-        return vacancies.get(i);
+    public List getVacancy() {
+        return vacancies;
     }
 
     public User getUser() {

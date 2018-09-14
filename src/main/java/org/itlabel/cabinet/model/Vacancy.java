@@ -52,7 +52,8 @@ public class Vacancy {
     }
 
     public String getVacancyDescription() {
-        return vacancyDescription;
+        if(vacancyDescription!=null)return vacancyDescription;
+        return "";
     }
 
     public void setVacancyId(Integer vacancyId) {
