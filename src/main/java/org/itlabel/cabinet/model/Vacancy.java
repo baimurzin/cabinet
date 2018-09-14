@@ -11,7 +11,6 @@ public class Vacancy {
     private String positionName;
     private Integer salary;
     private Integer currencyId;
-    private String vacancyDescription = "This is the default vacancy description, here will be skills and other information ";
 
     public Vacancy(Integer vacancyId, String companyName, String positionName, Integer salary, Integer currencyId) {
         this.vacancyId = vacancyId;
@@ -21,25 +20,62 @@ public class Vacancy {
         this.currencyId = currencyId;
     }
 
-    public Integer getVacancyId() { return vacancyId; }
+    private String vacancyDescription;
 
-    public String getCompanyName() { return companyName; }
+    public Vacancy(Integer vacancyId, String companyName, String positionName, Integer salary, Integer currencyId, String vacancyDescription) {
+        this.vacancyId = vacancyId;
+        this.companyName = companyName;
+        this.positionName = positionName;
+        this.salary = salary;
+        this.currencyId = currencyId;
+        this.vacancyDescription = vacancyDescription;
+    }
 
-    public String getPositionName() { return positionName; }
+    public Integer getVacancyId() {
+        return vacancyId;
+    }
 
-    public Integer getSalary() { return salary; }
+    public String getCompanyName() {
+        return companyName;
+    }
 
-    public Integer getCurrencyId() { return currencyId; }
+    public String getPositionName() {
+        return positionName;
+    }
 
-    public String getVacancyDescription() { return vacancyDescription; }
+    public Integer getSalary() {
+        return salary;
+    }
 
-    public void setVacancyId(Integer vacancyId) { this.vacancyId = vacancyId; }
+    public Integer getCurrencyId() {
+        return currencyId;
+    }
 
-    public void setCompanyName(String companyName) { this.companyName = companyName; }
+    public String getVacancyDescription() {
+        return vacancyDescription;
+    }
 
-    public void setPositionName(String positionName) { this.positionName = positionName; }
+    public void setVacancyId(Integer vacancyId) {
+        this.vacancyId = vacancyId;
+    }
 
-    public void setSalary(Integer salary) { this.salary = salary; }
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
+    }
 
-    public void setCurrencyId(Integer currencyId) { this.currencyId = currencyId; }
+    public void setPositionName(String positionName) {
+        this.positionName = positionName;
+    }
+
+    public void setSalary(Integer salary) {
+        this.salary = salary;
+    }
+
+    public void setCurrencyId(Integer currencyId) {
+        this.currencyId = currencyId;
+    }
+
+    public void setVacancyDescription(String vacancyDescription) {
+        this.vacancyDescription = vacancyDescription;
+    }
 }

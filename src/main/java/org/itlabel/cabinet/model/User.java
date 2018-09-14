@@ -1,20 +1,22 @@
 package org.itlabel.cabinet.model;
 
+import java.util.List;
+
 public class User {
 
     private String name;
 
-    private String[] skills;
+    private List<String> skills;
 
     public String getName() {
         return name;
     }
 
-    public String getSkills(int i) { return skills[i]; }
+    public String getSkills(int i) { return skills.get(i); }
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public void setSkills(String[] skills) { this.skills = skills; }
+    public void setSkills(List skills) { this.skills = skills; }
 }
