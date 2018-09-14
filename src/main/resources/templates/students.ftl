@@ -3,7 +3,7 @@
     <#if students??>
         <#list students as student>
             <p>
-                <a href="student_info.ftl">${student.surname}</a>
+                <a href="<@spring.url "/${student.id}"/>">${student.surname}</a>
             </p>
         </#list>
     </#if>

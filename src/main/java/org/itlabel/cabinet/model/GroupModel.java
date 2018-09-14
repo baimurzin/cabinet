@@ -9,7 +9,7 @@ import java.util.List;
 @Entity
 @Setter
 @Getter
-@Table(name = "group")
+@Table(name = "group_model")
 public class GroupModel {
 
     @Id
@@ -18,6 +18,6 @@ public class GroupModel {
 
     private String title;
 
-    @OneToMany(mappedBy = "group")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "group_model")
     private List<UserModel> students;
 }

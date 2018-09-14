@@ -2,7 +2,7 @@ package org.itlabel.cabinet.model;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.itlabel.cabinet.model.enums.Role;
+import org.itlabel.cabinet.model.enums.UserRole;
 
 import javax.persistence.*;
 
@@ -21,9 +21,9 @@ public class UserModel {
     private String name;
 
     @Enumerated(EnumType.STRING)
-    private Role userRole;
+    private UserRole userRole = UserRole.STUDENT;
 
-    @ManyToOne
-    @JoinColumn(name = "group_id")
-    private GroupModel group;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "group_model_id")
+    private GroupModel group_model;
 }
