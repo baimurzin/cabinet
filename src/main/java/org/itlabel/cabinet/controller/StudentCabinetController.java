@@ -50,10 +50,12 @@ public class StudentCabinetController {
 
     @RequestMapping(value = "/task/{number}", method = POST)
     public String showCurrentTaskPage(@RequestParam("status") String status, Model model, @PathVariable("number") int number) {
-        Task task = new Task();
-        task = list.get(number);
-        task.setStatus(status);
-        list.set(number, task);
+        if (status!="") {
+            Task task = new Task();
+            task = list.get(number);
+            task.setStatus(status);
+            list.set(number, task);
+        }
         return "redirect:/tasks";
     }
 }
