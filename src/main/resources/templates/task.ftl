@@ -24,7 +24,7 @@
 <h1>Изменение статуса задания</h1>
 <form action="/task/${task.id}" method="post">
 
-    <select name="status"">
+    <select name="status">
         <option value="">Выберите статус...</option>
         <option>Новое</option>
         <option>Делается</option>
