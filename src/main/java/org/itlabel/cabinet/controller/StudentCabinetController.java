@@ -50,7 +50,7 @@ public class StudentCabinetController {
 
     @RequestMapping(value = "/task/{number}", method = POST)
     public String showCurrentTaskPage(@RequestParam("status") String status, Model model, @PathVariable("number") int number) {
-        if (status!="") {
+        if (!status.equals("")) {
             Task task = new Task();
             task = list.get(number);
             task.setStatus(status);
