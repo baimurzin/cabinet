@@ -7,7 +7,6 @@
 </head>
 <body>
 <h2 class="hello-title">Here is the vacancy page</h2>
-<script src="/js/main.js"></script>
 <a href="profile">My profile</a>
 <a href="level">My level</a>
 <a href="tasks">My tasks</a>
@@ -19,6 +18,6 @@
     <h3>${vacancy.getSalary()} руб/мес</h3>
     <p>${vacancy.getVacancyDescription()}</p>
 </div>
-
+<script src="/js/main.js"></script>
 </body>
 </html>

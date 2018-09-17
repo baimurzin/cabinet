@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Chat</title>
-    <link href="/css/main.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet"
 </head>
 <body>
 <h2 class="hello-title">My career</h2>
-<script src="/js/main.js"></script>
 <a href="profile">My profile</a>
 <a href="level">My level</a>
 <a href="tasks">My tasks</a>
@@ -31,5 +30,6 @@
         </ul>
     </div>
 </div>
+<script src="/js/main.js"></script>
 </body>
 </html>
