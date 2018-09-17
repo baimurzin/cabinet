@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Chat</title>
-    <link href="/css/main.css" rel="stylesheet"
+    <link href="/css/main.css" rel="stylesheet">
 </head>
 <body>
 <h2 class="hello-title">My career</h2>
