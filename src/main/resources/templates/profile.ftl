@@ -7,9 +7,11 @@
 </head>
 <body>
 <h2 class="hello-title">Here is your profile page</h2>
-<script src="/js/main.js"></script>
+<a href="profile">My profile</a>
 <a href="level">My level</a>
 <a href="tasks">My tasks</a>
 <a href="chat">Chat</a>
+<a href="">My career</a>
+<script src="/js/main.js"></script>
 </body>
 </html>
