@@ -7,11 +7,11 @@
 </head>
 <body>
 <h2 class="hello-title">Here is the vacancy page</h2>
-<a href="profile">My profile</a>
-<a href="level">My level</a>
-<a href="tasks">My tasks</a>
-<a href="chat">Chat</a>
-<a href="career">My career</a>
+<a href="/profile">My profile</a>
+<a href="/level">My level</a>
+<a href="/tasks">My tasks</a>
+<a href="/chat">Chat</a>
+<a href="/career">My career</a>
 <div style="margin:20px;">
     <h2>${vacancy.getCompanyName()}</h2>
     <h3>${vacancy.getPositionName()}</h3>

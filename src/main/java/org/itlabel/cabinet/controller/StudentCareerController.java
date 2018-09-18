@@ -44,7 +44,7 @@ public class StudentCareerController {
         return new ModelAndView("career", "careerModel", new CareerModel(vacancies, user));
     }
 
-    @RequestMapping(value = "/vacancy/{number}", method = GET)
+    @RequestMapping(value = "/vacancy/{number}")
     public String showCurrentVacancyPage(Model model, @PathVariable("number") Integer number) {
         model.addAttribute("vacancy", vacancies.get(number));
         return "vacancy";
