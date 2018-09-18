@@ -1,6 +1,7 @@
 package org.itlabel.cabinet.controller;
 
 import org.itlabel.cabinet.model.CareerModel;
+import org.itlabel.cabinet.model.Task;
 import org.itlabel.cabinet.model.User;
 import org.itlabel.cabinet.model.Vacancy;
 import org.springframework.stereotype.Controller;
@@ -12,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
+import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 /*
  *@author Yakovlev Alexandr
@@ -42,8 +44,10 @@ public class StudentCareerController {
         return new ModelAndView("career", "careerModel", new CareerModel(vacancies, user));
     }
 
-    @RequestMapping("/vacancy")
-    public ModelAndView greeting(@RequestParam(value = "id") Integer id) {
-        return new ModelAndView("vacancy", "vacancy", vacancies.get(id));
+    @RequestMapping(value = "/vacancy/{number}", method = GET)
+    public String showCurrentVacancyPage(Model model, @PathVariable("number") Integer number) {
+        model.addAttribute("vacancy", vacancies.get(number));
+        return "vacancy";
     }
+
 }
