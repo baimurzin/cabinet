@@ -1,10 +1,25 @@
 package org.itlabel.cabinet.model;
 
+import org.springframework.data.annotation.Id;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "tasks")
 public class Task {
+
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "number")
     private Integer number;
+    @Column(name = "name")
     private String name;
+    @Column(name = "description")
     private String description;
+    @Column(name = "status")
     private String status;
 
     public Task() {
