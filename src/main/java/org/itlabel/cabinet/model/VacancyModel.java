@@ -1,6 +1,6 @@
 package org.itlabel.cabinet.model;
 
-import javax.persistence.Id;
+        import javax.persistence.Id;
 
 public class VacancyModel {
     @Id

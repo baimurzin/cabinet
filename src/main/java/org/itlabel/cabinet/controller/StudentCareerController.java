@@ -32,7 +32,7 @@ public class StudentCareerController {
 //    };
 
     @Autowired
-    VacancyService vacancyService;
+   private VacancyService vacancyService;
 
 
     List skills = new ArrayList<String>() {
