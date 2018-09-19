@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Task</title>
-
 </head>
 <body>
 <h2 class="hello-title">Current task</h2>
@@ -20,10 +19,8 @@
 
 <p>СТАТУС: ${task.status}</p>
 
-
 <h1>Изменение статуса задания</h1>
 <form action="/task/${task.id}" method="post">
-
     <select name="status">
         <option value="">Выберите статус...</option>
         <option>Новое</option>

@@ -40,22 +40,18 @@ public class StudentCabinetController {
         return "chat";
     }
 
-    @RequestMapping(value = "/task/{number}", method = GET)
-    //TODO - переделать на ID
-    public String showCurrentTaskPage(Model model, @PathVariable("number") Integer number) {
-//        model.addAttribute("task", list.get(number));
-        model.addAttribute("task", taskService.getTaskById(number.longValue()));
+    @RequestMapping(value = "/task/{id}", method = GET)
+    public String showCurrentTaskPage(Model model, @PathVariable("id") Long id) {
+        model.addAttribute("task", taskService.getTaskById(id));
         return "task";
     }
 
-    @RequestMapping(value = "/task/{number}", method = POST)
-    //TODO - переделать на ID
-    public String showCurrentTaskPage(@RequestParam("status") String status, Model model, @PathVariable("number") Integer number) {
+    @RequestMapping(value = "/task/{id}", method = POST)
+    public String showCurrentTaskPage(@RequestParam("status") String status, Model model, @PathVariable("id") Long id) {
         if (status != null && !status.isEmpty()) {
             Task task = new Task();
-            task = taskService.getTaskById(number.longValue());
+            task = taskService.getTaskById(id);
             task.setStatus(status);
-//            list.set(number, task);
             taskService.editTask(task);
         }
         return "redirect:/tasks";
