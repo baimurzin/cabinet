@@ -17,13 +17,8 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 @Controller
 public class StudentCabinetController {
-//    private List<Task> list = Arrays.asList(
-//            new Task(0l, 0, "Набери грибов", "Возьми корзинку, ножик и едь в лес.", "Новое"),
-//            new Task(1l, 1, "Собери банку сушеных комаров", "Возьми трехлитровую банку и едь на болото.",
-//                    "Новое"),
-//            new Task(2l, 2, "Сделай коллаж", "Возьми грибы, комаров и лист бумаги.", "Новое")
-//    );
-private TaskService taskService;
+    private TaskService taskService;
+
     @RequestMapping("/profile")
     public String showProfilePage() {
         return "profile";
@@ -56,7 +51,7 @@ private TaskService taskService;
     @RequestMapping(value = "/task/{number}", method = POST)
     //TODO - переделать на ID
     public String showCurrentTaskPage(@RequestParam("status") String status, Model model, @PathVariable("number") Integer number) {
-        if (status!= null && !status.isEmpty()) {
+        if (status != null && !status.isEmpty()) {
             Task task = new Task();
             task = taskService.getTaskById(number.longValue());
             task.setStatus(status);
@@ -65,8 +60,8 @@ private TaskService taskService;
         }
         return "redirect:/tasks";
     }
-//@Autowired(required = true)
-//@Qualifier(value = "taskService")
+
+    @Autowired(required = true)
     public void setTaskService(TaskService taskService) {
         this.taskService = taskService;
     }
