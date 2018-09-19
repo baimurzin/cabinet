@@ -9,7 +9,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface TaskRepository extends JpaRepository<Task, Long> {
 
-//    @Query("select task from tasks where task.id = :id")
-//    Task findById(@Param("id") Long id);
 }
 
