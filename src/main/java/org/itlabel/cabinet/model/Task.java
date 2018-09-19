@@ -1,7 +1,5 @@
 package org.itlabel.cabinet.model;
 
-import org.springframework.data.annotation.Id;
-
 import javax.persistence.*;
 
 @Entity
