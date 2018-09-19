@@ -12,7 +12,7 @@
 <a href="/tasks">My tasks</a>
 <a href="/chat">Chat</a>
 
-<h2>Задание ${task.id}</h2>
+<h2>Задание ID#${task.id}</h2>
 <h2>${task.name}</h2>
 <h3>Описание</h3>
 <p>${task.description}</p>

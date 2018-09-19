@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "tasks")
-public class Task {
+public class Task{
 
     @Id
     @Column(name = "id")
@@ -18,6 +18,11 @@ public class Task {
     private String status;
 
     public Task() {
+    }
+
+    @Override
+    public String toString() {
+        return "Task ID#"+id + " Name: " + name;
     }
 
     public Task(Long id, String name, String description, String status) {

@@ -3,14 +3,14 @@ package org.itlabel.cabinet.controller;
 import org.itlabel.cabinet.model.Task;
 import org.itlabel.cabinet.service.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.*;
+import java.util.Comparator;
+import java.util.List;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
@@ -26,7 +26,19 @@ public class StudentCabinetController {
 
     @RequestMapping("/tasks")
     public String showTasksPage(Model model) {
-        model.addAttribute("tasks", taskService.getAll());
+        List<Task> list = taskService.getAll();
+        list.sort(new Comparator<Task>() {
+            @Override
+            public int compare(Task o1, Task o2) {
+                Long result = o1.getId() - o2.getId();
+                int resultInt = 0;
+                if (result > 0) resultInt = 1;
+                if (result < 0) resultInt = -1;
+                if (result.equals(0)) resultInt = 0;
+                return resultInt;
+            }
+        });
+        model.addAttribute("tasks", list);
         return "tasks";
     }
 
