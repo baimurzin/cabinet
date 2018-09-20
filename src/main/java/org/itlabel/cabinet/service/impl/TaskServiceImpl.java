@@ -40,7 +40,7 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
-    public List<Task> getAll() {
+    public List<Task> getAllOrderedById() {
         return taskRepository.findAllByIdOrderById();
     }
 }

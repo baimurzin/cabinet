@@ -14,5 +14,5 @@ public interface TaskService {
 
     Task editTask(Task task);
 
-    List<Task> getAll();
+    List<Task> getAllOrderedById();
 }
