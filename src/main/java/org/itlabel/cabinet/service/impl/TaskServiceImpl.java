@@ -17,8 +17,7 @@ public class TaskServiceImpl implements TaskService {
     @Override
     @Transactional
     public Task addTask(Task task) {
-        Task savedTask = taskRepository.saveAndFlush(task);
-        return savedTask;
+        return taskRepository.saveAndFlush(task);
     }
 
     @Override
@@ -30,7 +29,6 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
-    @Transactional
     public Task getTaskById(Long id) {
         return taskRepository.getOne(id);
     }
@@ -42,12 +40,11 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
-    @Transactional
     public List<Task> getAll() {
         return taskRepository.findAll();
     }
 
-    public void setTaskRepository(TaskRepository taskRepository) {
-        this.taskRepository = taskRepository;
-    }
+//    public void setTaskRepository(TaskRepository taskRepository) {
+//        this.taskRepository = taskRepository;
+//    }
 }
