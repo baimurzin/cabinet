@@ -4,6 +4,8 @@ import org.itlabel.cabinet.model.CareerModel;
 import org.itlabel.cabinet.model.Task;
 import org.itlabel.cabinet.model.User;
 import org.itlabel.cabinet.model.Vacancy;
+import org.itlabel.cabinet.service.VacancyService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -20,14 +22,19 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
  */
 @Controller
 public class StudentCareerController {
-    List vacancies = new ArrayList<Vacancy>() {
-        {
-            add(new Vacancy(0, "Google", "middle Java Developer", 250000, 1));
-            add(new Vacancy(1, "Yandex", "junior Java Developer", 150000, 1));
-            add(new Vacancy(2, "FaceBook", "middle Java Developer", 240000, 1));
-            add(new Vacancy(3, "Uber", "junior Java Developer", 180000, 1));
-        }
-    };
+//    List vacancies = new ArrayList<Vacancy>() {
+//        {
+//            add(new Vacancy(0, "Google", "middle Java Developer", 250000, 1));
+//            add(new Vacancy(1, "Yandex", "junior Java Developer", 150000, 1));
+//            add(new Vacancy(2, "FaceBook", "middle Java Developer", 240000, 1));
+//            add(new Vacancy(3, "Uber", "junior Java Developer", 180000, 1));
+//        }
+//    };
+
+    @Autowired
+   private VacancyService vacancyService;
+
+
     List skills = new ArrayList<String>() {
         {
             add("SQL");
@@ -41,12 +48,12 @@ public class StudentCareerController {
     @RequestMapping("/career")
     public ModelAndView showCareerPage() {
         user.setSkills(skills);
-        return new ModelAndView("career", "careerModel", new CareerModel(vacancies, user));
+        return new ModelAndView("career", "careerModel", new CareerModel(vacancyService.getAllVacancies(), user));
     }
 
     @RequestMapping(value = "/vacancy/{number}")
     public String showCurrentVacancyPage(Model model, @PathVariable("number") Integer number) {
-        model.addAttribute("vacancy", vacancies.get(number));
+        model.addAttribute("vacancy", vacancyService.getVacancyById(number));
         return "vacancy";
     }
 
