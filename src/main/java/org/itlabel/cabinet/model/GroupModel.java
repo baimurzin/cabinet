@@ -20,4 +20,7 @@ public class GroupModel {
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "group_model")
     private List<UserModel> students;
+
+    @OneToOne(mappedBy = "group")
+    private ProgramModel program;
 }

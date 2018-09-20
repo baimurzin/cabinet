@@ -4,6 +4,7 @@ import org.itlabel.cabinet.model.GroupModel;
 import org.itlabel.cabinet.repository.GroupRepository;
 import org.itlabel.cabinet.service.GroupService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -21,7 +22,7 @@ public class GroupServiceImpl implements GroupService {
 
     @Override
     public GroupModel findGroupById(Long id) {
-        return groupRepository.getOne(id);
+        return groupRepository.getOne(groupRepository.findGroupIdByProgram(id));
     }
 
     @Override

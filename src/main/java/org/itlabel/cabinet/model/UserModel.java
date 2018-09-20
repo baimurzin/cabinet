@@ -5,6 +5,7 @@ import lombok.Setter;
 import org.itlabel.cabinet.model.enums.UserRole;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Setter
@@ -26,4 +27,12 @@ public class UserModel {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "group_model_id")
     private GroupModel group_model;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "program_model_id")
+    private ProgramModel program;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "student")
+    private List<Progress> progress;
+
 }

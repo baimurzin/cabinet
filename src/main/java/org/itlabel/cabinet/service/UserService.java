@@ -10,4 +10,6 @@ public interface UserService {
 
     List<UserModel> findAllUsers();
 
+    List<UserModel> findAllUsersByProgram(Long id);
+
 }
