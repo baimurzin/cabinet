@@ -9,7 +9,7 @@ import java.util.List;
 
 @Repository
 public interface TaskRepository extends JpaRepository<Task, Long> {
-@Query(value="select * from tasks order by id", nativeQuery = true)
+    @Query(value = "select * from tasks order by id", nativeQuery = true)
     List<Task> findAllByIdOrderById();
 }
 
