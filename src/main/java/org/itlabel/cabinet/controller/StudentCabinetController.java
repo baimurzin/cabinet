@@ -26,8 +26,8 @@ public class StudentCabinetController {
 
     @RequestMapping("/tasks")
     public String showTasksPage(Model model) {
-        List<Task> list = taskService.getAllOrderedById();
-        model.addAttribute("tasks", list);
+        List<Task> tasks = taskService.getAllOrderedById();
+        model.addAttribute("tasks", tasks);
         return "tasks";
     }
 
