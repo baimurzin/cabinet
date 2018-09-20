@@ -17,6 +17,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 @Controller
 public class StudentCabinetController {
+    @Autowired
     private TaskService taskService;
 
     @RequestMapping("/profile")
@@ -69,7 +70,7 @@ public class StudentCabinetController {
         return "redirect:/tasks";
     }
 
-    @Autowired(required = true)
+
     public void setTaskService(TaskService taskService) {
         this.taskService = taskService;
     }
