@@ -1,18 +1,32 @@
 package org.itlabel.cabinet.model;
 
-public class Task {
+import javax.persistence.*;
+
+@Entity
+@Table(name = "tasks")
+public class Task{
+
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Integer number;
+    @Column(name = "name")
     private String name;
+    @Column(name = "description")
     private String description;
+    @Column(name = "status")
     private String status;
 
     public Task() {
     }
 
-    public Task(Long id, Integer number, String name, String description, String status) {
+    @Override
+    public String toString() {
+        return "Task ID#"+id + " Name: " + name;
+    }
+
+    public Task(Long id, String name, String description, String status) {
         this.id = id;
-        this.number = number;
         this.name = name;
         this.description = description;
         this.status = status;
@@ -24,14 +38,6 @@ public class Task {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Integer getNumber() {
-        return number;
-    }
-
-    public void setNumber(Integer number) {
-        this.number = number;
     }
 
     public String getName() {

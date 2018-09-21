@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Tasks</title>
-    <link href="/css/main.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 </head>
 <body>
 <h2 class="hello-title">Here are my tasks</h2>
@@ -16,24 +16,32 @@
 <#if tasks?has_content>
 
 <div>
-    <table border="1">
+    <table class="tasklist" border="1">
         <tr>
-            <th>Task number</th>
+            <th>Number</th>
             <th>Name</th>
             <th>Status</th>
         </tr>
+
         <#list tasks as task>
-        <tr>
-            <td>${task.number}</td>
-            <td><a href="task/${task.number}">${task.name}</a></td>
-            <td>${task.status}</td>
-        </tr>
+            <tr>
+                <td></td>
+                <td><a href="task/${task.id}">${task.name}</a></td>
+                <td>${task.status}</td>
+            </tr>
         </#list>
+
     </table>
 </div>
+
 <#else>
 <p>No tasks yet</p>
 </#if>
-<script src="/js/main.js"></script>
+
+<script>
+    $('.tasklist tr').each(function (i) {
+        i && $(this).find('td:first').text(i);
+    });
+</script>
 </body>
 </html>
