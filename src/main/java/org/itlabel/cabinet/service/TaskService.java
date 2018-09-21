@@ -15,4 +15,10 @@ public interface TaskService {
     Task editTask(Task task);
 
     List<Task> getAllOrderedById();
+
+
+    List<Task> findAllTasks();
+
+    List<Task> findAllTasksInProgram(Long id);
+
 }

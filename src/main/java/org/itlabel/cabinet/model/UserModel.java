@@ -2,6 +2,7 @@ package org.itlabel.cabinet.model;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.itlabel.cabinet.model.enums.UserRole;
 
 import javax.persistence.*;
 import java.util.List;
@@ -9,32 +10,29 @@ import java.util.List;
 @Entity
 @Setter
 @Getter
-@Table(name = "task")
-public class Task{
+@Table(name = "user_model")
+public class UserModel {
 
     @Id
-    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "name")
+    private String surname;
+
     private String name;
 
-    @Column(name = "description")
-    private String description;
+    @Enumerated(EnumType.STRING)
+    private UserRole userRole = UserRole.STUDENT;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "group_model_id")
+    private GroupModel group_model;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "program_model_id")
     private ProgramModel program;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "task")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "student")
     private List<Progress> progress;
-
-    private Double point;
-
-    @Override
-    public String toString() {
-        return "Task ID#"+id + " Name: " + name;
-    }
 
 }

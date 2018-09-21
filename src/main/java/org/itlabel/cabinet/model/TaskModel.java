@@ -1,7 +1,9 @@
 package org.itlabel.cabinet.model;
 
+
 import lombok.Getter;
 import lombok.Setter;
+import org.itlabel.cabinet.model.enums.TaskStatus;
 
 import javax.persistence.*;
 import java.util.List;
@@ -10,18 +12,18 @@ import java.util.List;
 @Setter
 @Getter
 @Table(name = "task")
-public class Task{
+public class TaskModel {
 
     @Id
-    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "name")
     private String name;
 
-    @Column(name = "description")
     private String description;
+
+//    @Enumerated(EnumType.STRING)
+//    private TaskStatus taskStatus = TaskStatus.NEW;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "program_model_id")
@@ -31,10 +33,5 @@ public class Task{
     private List<Progress> progress;
 
     private Double point;
-
-    @Override
-    public String toString() {
-        return "Task ID#"+id + " Name: " + name;
-    }
 
 }

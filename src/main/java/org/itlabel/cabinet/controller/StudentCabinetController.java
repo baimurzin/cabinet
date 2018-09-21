@@ -51,7 +51,7 @@ public class StudentCabinetController {
     public String showCurrentTaskPage(@RequestParam("status") String status, @PathVariable("id") Long id) {
         if (status != null && !status.isEmpty()) {
             Task task = taskService.getTaskById(id);
-            task.setStatus(status);
+//            task.setStatus(status);
             taskService.editTask(task);
         }
         return "redirect:/tasks";

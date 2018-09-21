@@ -1,6 +1,8 @@
 package org.itlabel.cabinet.service.impl;
 
 import org.itlabel.cabinet.model.Task;
+
+import org.itlabel.cabinet.model.TaskModel;
 import org.itlabel.cabinet.repository.TaskRepository;
 import org.itlabel.cabinet.service.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,5 +44,16 @@ public class TaskServiceImpl implements TaskService {
     @Override
     public List<Task> getAllOrderedById() {
         return taskRepository.findAllByIdOrderById();
+    }
+
+
+    @Override
+    public List<Task> findAllTasks() {
+        return taskRepository.findAll();
+    }
+
+    @Override
+    public List<Task> findAllTasksInProgram(Long id) {
+        return taskRepository.findAllByProgramId(id);
     }
 }
