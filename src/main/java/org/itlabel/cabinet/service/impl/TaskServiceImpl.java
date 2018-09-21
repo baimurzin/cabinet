@@ -46,18 +46,14 @@ public class TaskServiceImpl implements TaskService {
         return taskRepository.findAllByIdOrderById();
     }
 
-    @Override
-    public TaskModel findTaskById(Long id) {
-        return taskRepository.getOne(id);
-    }
 
     @Override
-    public List<TaskModel> findAllTasks() {
+    public List<Task> findAllTasks() {
         return taskRepository.findAll();
     }
 
     @Override
-    public List<TaskModel> findAllTasksInProgram(Long id) {
+    public List<Task> findAllTasksInProgram(Long id) {
         return taskRepository.findAllByProgramId(id);
     }
 }

@@ -1,7 +1,6 @@
 package org.itlabel.cabinet.repository;
 
 import org.itlabel.cabinet.model.Task;
-import org.itlabel.cabinet.model.TaskModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -16,6 +15,6 @@ public interface TaskRepository extends JpaRepository<Task, Long> {
 
 
     @Query(nativeQuery = true, value = "select * from task where program_model_id=:id")
-    List<TaskModel> findAllByProgramId(@Param("id") Long id);
+    List<Task> findAllByProgramId(@Param("id") Long id);
 
 }

@@ -1,6 +1,5 @@
 package org.itlabel.cabinet.service;
 
-import org.itlabel.cabinet.model.TaskModel;
 import org.itlabel.cabinet.model.Task;
 
 import java.util.List;
@@ -17,10 +16,9 @@ public interface TaskService {
 
     List<Task> getAllOrderedById();
 
-    TaskModel findTaskById(Long id);
 
-    List<TaskModel> findAllTasks();
+    List<Task> findAllTasks();
 
-    List<TaskModel> findAllTasksInProgram(Long id);
+    List<Task> findAllTasksInProgram(Long id);
 
 }

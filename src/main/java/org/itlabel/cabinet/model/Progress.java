@@ -26,6 +26,6 @@ public class Progress {
     private TaskStatus status;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    private TaskModel task;
+    private Task task;
 
 }

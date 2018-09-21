@@ -22,7 +22,7 @@ public class ProgramModel {
     private String description;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "program")
-    private List<TaskModel> tasks;
+    private List<Task> tasks;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "program")
     private List<UserModel> students;

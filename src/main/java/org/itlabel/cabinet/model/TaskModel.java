@@ -22,8 +22,8 @@ public class TaskModel {
 
     private String description;
 
-    @Enumerated(EnumType.STRING)
-    private TaskStatus taskStatus = TaskStatus.NEW;
+//    @Enumerated(EnumType.STRING)
+//    private TaskStatus taskStatus = TaskStatus.NEW;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "program_model_id")
