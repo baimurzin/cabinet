@@ -1,17 +1,18 @@
 package org.itlabel.cabinet.service;
 
-import org.itlabel.cabinet.model.Vacancy;
+import org.itlabel.cabinet.model.VacancyModel;
 
 import java.util.List;
 
 public interface VacancyService {
-    List<Vacancy> getAllVacancies();
+    List<VacancyModel> getAllVacancies();
 
-    void saveVacancy(Vacancy vacancy) throws Exception;
+    void saveVacancy(VacancyModel vacancyModel) throws Exception;
 
-    Vacancy getVacancyById(int id);
+    VacancyModel getVacancyById(int id);
 
-    void updateVacancy(Vacancy vacancy);
+    void updateVacancy(VacancyModel vacancyModel);
 
-    void deleteVacancy(Vacancy vacancy);
+    void deleteVacancy(VacancyModel vacancyModel);
+    List<VacancyModel> findAllEmployersVacancyById(int id);
 }

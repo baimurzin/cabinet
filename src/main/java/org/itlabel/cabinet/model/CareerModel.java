@@ -6,7 +6,7 @@ import java.util.List;
  *@author Yakovlev Alexandr
  */
 public class CareerModel{
-    private List<Vacancy> vacancies;
+    private List<VacancyModel> vacancies;
     private User user;
 
     public CareerModel(List vacancies, User user) {

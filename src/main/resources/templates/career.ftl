@@ -24,8 +24,8 @@
     <div style="margin:20px;  float: right">
         <h3>Вакансии</h3>
         <ul>
-        <#list careerModel.getVacancy() as vacancy>
-            <li><a href="vacancy/${vacancy.getVacancyId()}">${vacancy.getCompanyName()} ${vacancy.getPositionName()} ${vacancy.getSalary()} руб/мес</a></li>
+        <#list careerModel.getVacancy() as vacancyModel>
+            <li><a href="vacancyModel/${vacancyModel.getVacancyId()}">${vacancyModel.getCompanyName()} ${vacancyModel.getPositionName()} ${vacancyModel.getSalary()} руб/мес</a></li>
         </#list>
         </ul>
     </div>

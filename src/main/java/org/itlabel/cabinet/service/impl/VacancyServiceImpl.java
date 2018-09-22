@@ -1,7 +1,7 @@
 package org.itlabel.cabinet.service.impl;
 
 
-import org.itlabel.cabinet.model.Vacancy;
+import org.itlabel.cabinet.model.VacancyModel;
 import org.itlabel.cabinet.repository.VacancyRepository;
 import org.itlabel.cabinet.service.VacancyService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,27 +16,30 @@ public class VacancyServiceImpl implements VacancyService {
     @Autowired
     VacancyRepository vacancyRepository;
 
-    public List<Vacancy> getAllVacancies() {
+    public List<VacancyModel> getAllVacancies() {
         return vacancyRepository.findAll();
     }
 
-    public void saveVacancy(Vacancy vacancy) throws Exception {
-        if (vacancy.getCompanyName().length() < 2) {
-            throw new Exception();
-        }
-        vacancyRepository.save(vacancy);
+    public void saveVacancy(VacancyModel vacancyModel) throws Exception {
+        vacancyRepository.save(vacancyModel);
     }
 
-    public Vacancy getVacancyById(int id) {
+    public VacancyModel getVacancyById(int id) {
         return vacancyRepository.getOne(id);
     }
 
-    public void updateVacancy(Vacancy vacancy) {
-        vacancyRepository.save(vacancy);
+    public void updateVacancy(VacancyModel vacancyModel) {
+        vacancyRepository.save(vacancyModel);
     }
 
-    public void deleteVacancy(Vacancy vacancy) {
-        vacancyRepository.delete(vacancy);
-
+    public void deleteVacancy(VacancyModel vacancyModel) {
+        vacancyRepository.delete(vacancyModel);
     }
+
+
+    public List<VacancyModel> findAllEmployersVacancyById(int id){
+        return vacancyRepository.findAllEmployersVacancyById(id);
+    }
+
+
 }

@@ -1,11 +1,6 @@
 package org.itlabel.cabinet.model;
 
 import javax.persistence.*;
-import javax.persistence.criteria.CriteriaBuilder;
-
-/*
- *@author Yakovlev Alexandr
- */
 
 @Entity
 @Table(name = "vacancy")
@@ -13,15 +8,23 @@ public class Vacancy {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "vacancy_id", nullable = false, unique = true)
     private Integer vacancyId;
     private String companyName;
     private String positionName;
-    private Integer salary;
-    private Integer currencyId;
     private String vacancyDescription;
+    private Integer salary;
 
-    public Vacancy(){
+    private Integer currencyId;
+    private Long user_model_id;
 
+
+    public String getVacancyDescription() {
+        return vacancyDescription;
+    }
+
+    public void setVacancyDescription(String vacancyDescription) {
+        this.vacancyDescription = vacancyDescription;
     }
 
     public Integer getVacancyId() {
@@ -64,11 +67,14 @@ public class Vacancy {
         this.currencyId = currencyId;
     }
 
-    public String getVacancyDescription() {
-        return vacancyDescription;
+    public Long getUser_model_id() {
+        return user_model_id;
     }
 
-    public void setVacancyDescription(String vacancyDescription) {
-        this.vacancyDescription = vacancyDescription;
+    public void setUser_model_id(Long user_model_id) {
+        this.user_model_id = user_model_id;
     }
+
+
+
 }

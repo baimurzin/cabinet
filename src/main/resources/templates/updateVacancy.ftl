@@ -17,7 +17,9 @@
     <input title="vacancyDescription" type="text" name="vacancyDescription" value="${vacancy.vacancyDescription}">
     <p>salary</p>
     <input title="salary" type="text" name="salary" value="${vacancy.salary}">
-    <br><input id="vacancyId" type="text" name="vacancyId" value="${vacancy.vacancyId}" style="display: none" readonly>
+    <br><input  title="vacancyId" type="text" name="vacancyId" value="${vacancy.vacancyId}" style="display: none" readonly>
+    <br><input   title="user_model_id" type="text" name="user_model_id" value="${vacancy.user_model_id}" style="display: none" readonly>
+
     <input type="submit" value="OK">
 </form>
 
