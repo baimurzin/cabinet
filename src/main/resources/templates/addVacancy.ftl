@@ -17,7 +17,7 @@
     <input title="vacancyDescription" type="text" name="vacancyDescription">
     <p>salary</p>
     <input title="salary" type="text" name="salary">
-    <br><input id="user_model" type="text" name="user_model" value="${creator_id}" style="display: none" readonly>
+    <br><input id="user_model" type="text" name="user_model" value="${creator}" style="display: none" readonly>
 
     <input type="submit" value="OK">
 </form>

@@ -1,5 +1,6 @@
 package org.itlabel.cabinet.controller;
 
+import org.itlabel.cabinet.model.UserModel;
 import org.itlabel.cabinet.model.Vacancy;
 import org.itlabel.cabinet.model.VacancyModel;
 import org.itlabel.cabinet.service.UserService;
@@ -43,8 +44,9 @@ vacancyModel.setVacancyId(vacancy.getVacancyId());
 vacancyModel.setUser_model(userService.findUserById(vacancy.getUser_model_id()));
 
         vacancyService.updateVacancy(vacancyModel);
-//        System.out.println(vacancyModel.getUser_model().getId() + "second update");
-        return "redirect:/employersVacancies/" +  vacancyModel.getUser_model().getId();
+//        System.out.println(vacancyModel.getUser_model().getId());
+        System.out.println(vacancyModel.getUser_model().getId() + "second update");
+        return "redirect:/employerPage/" +  vacancyModel.getUser_model().getId();
     }
 
     @GetMapping("/updateVacancy/{id}")
@@ -69,23 +71,25 @@ vacancyModel.setUser_model(userService.findUserById(vacancy.getUser_model_id()))
     }
 
 
-    @GetMapping("/addVacancy/{id}")
-    public String addVacancyPage(@PathVariable("id") int id, Model model) {
-        model.addAttribute("creator_id", id);
+    @GetMapping("/addVacancy/{employer}")
+    public String addVacancyPage(@PathVariable("employer") UserModel userModel, Model model) {
+        model.addAttribute("creator", userModel);
         return "addVacancy";
     }
 
     @PostMapping("/addVacancy")
     public String addVacancyPage(@ModelAttribute("vacancy") VacancyModel vacancyModel) throws Exception {
+        System.out.println(vacancyModel.getUser_model());
         vacancyService.saveVacancy(vacancyModel);
         return "redirect:/vacancy";
     }
 
-    @RequestMapping("/removeVacancy/{id}")
-    public String removeVacancy(@PathVariable("id") int id) {
+    @RequestMapping("/removeVacancy/{id}/{id_employer}")
+    public String removeVacancy(@PathVariable("id") int id, @PathVariable("id_employer") int id_employer) {
         VacancyModel vacancyModel = vacancyService.getVacancyById(id);
         vacancyService.deleteVacancy(vacancyModel);
-        return "redirect:/vacancy";
+
+        return "redirect:/employerPage/" + id_employer;
     }
 
 //    @GetMapping("/employerPage")
@@ -96,7 +100,7 @@ vacancyModel.setUser_model(userService.findUserById(vacancy.getUser_model_id()))
     @GetMapping("/employerPage/{id}")
     public ModelAndView employerPageWithId(@PathVariable("id") int id, Model model) {
 
-        return new ModelAndView("employersVacancies", "vacancies", vacancyService.findAllEmployersVacancyById(id));
+        return new ModelAndView("employerPage", "vacancies", vacancyService.findAllEmployersVacancyById(id));
     }
 
 }

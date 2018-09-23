@@ -18,7 +18,9 @@ public class Vacancy {
     private Integer currencyId;
     private Long user_model_id;
 
+    public Vacancy(){
 
+    }
     public String getVacancyDescription() {
         return vacancyDescription;
     }
