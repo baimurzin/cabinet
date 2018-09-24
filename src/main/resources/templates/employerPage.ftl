@@ -6,7 +6,7 @@
     <title>Title</title>
 </head>
 <body>
-<#assign employer="" >
+<#assign creator_id = 0 >
 <h1>vacancyModel list</h1>
 <table>
     <tr>
@@ -19,7 +19,7 @@
     </tr>
 <#list vacancies as vacancyModel>
     <tr>
-        <td><a href="/vacancyModel/${vacancyModel.vacancyId}">${vacancyModel.vacancyId}</a></td>
+        <td>${vacancyModel.vacancyId}</td>
         <td>${vacancyModel.vacancyId}</td>
         <td>${vacancyModel.companyName}</td>
         <td>${vacancyModel.positionName}</td>
@@ -28,11 +28,11 @@
         <td>${vacancyModel.vacancyDescription}</td>
         <td><a href="/removeVacancy/${vacancyModel.vacancyId}/${vacancyModel.user_model.id}">Remove</a></td>
         <td><a href="/updateVacancy/${vacancyModel.vacancyId}">Update</a></td>
-    <#assign employer=vacancyModel.user_model>
+    <#assign creator_id=vacancyModel.user_model.id>
     </tr>
 </#list>
 </table>
 
-<a href="/addVacancy/${employer}">Add new vacancyModel</a>
+<a href="/addVacancy/${creator_id}">Add new vacancyModel</a>
 </body>
 </html>
